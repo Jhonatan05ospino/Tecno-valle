@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 
 <body>
     <?php
-        // access user id
+
         $username = $_SESSION['username'];
         $get_user_query = "SELECT * FROM `user_table` WHERE username='$username'";
         $get_user_result = mysqli_query($con,$get_user_query);

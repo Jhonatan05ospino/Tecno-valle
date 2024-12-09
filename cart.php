@@ -4,7 +4,7 @@ include('./functions/common_functions.php');
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@ session_start();
 <body>
     
     <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
-        <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a>Shop Now</a></span>
+        <span>Venta para navidad y envio gratuito - OFF 50%! <a>Comprar Ahora</a></span>
     </div>
     
     

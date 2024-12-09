@@ -30,11 +30,11 @@ session_start();
                         <form action="" method="post" class="d-flex flex-column gap-4">
                             <div class="form-outline">
                                 <label for="username" class="form-label">Usuario</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Usuario" required>
                             </div>
                             <div class="form-outline">
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>
                             </div>
                             <div class="form-outline">
                                 <a href="" class="text-2 text-decoration-underline">¿Olvidaste tu contraseña?</a>
@@ -51,17 +51,7 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- End Landing Section -->
-
-
-
-
-
-    <!-- Start Footer -->
-    <!-- <div class="upper-nav primary-bg p-2 px-3 text-center text-break">
-        <span>All CopyRight &copy;2023</span>
-    </div> -->
-    <!-- End Footer -->
+    
 
     <script src="../assets/js/bootstrap.bundle.js"></script>
 </body>
@@ -79,13 +69,13 @@ if (isset($_POST['admin_login'])) {
     if ($row_count > 0) {
         if (password_verify($password, $row_data['admin_password'])) {
             $_SESSION['admin_username'] = $username;
-            echo "<script>alert('Login Successfully');</script>";
+            echo "<script>alert('Inicio de Sesion Exitoso');</script>";
             echo "<script>window.open('./index.php','_self');</script>";
         } else {
-            echo "<script>alert('Invalid Credentials')</script>";
+            echo "<script>alert('Credenciales Invalidas')</script>";
         }
     } else {
-        echo "<script>alert('Username not exist')</script>";
+        echo "<script>alert('Usuario No Existe')</script>";
     }
 }
 ?>

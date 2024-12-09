@@ -30,11 +30,11 @@ session_start();
                         <form action="" method="post" class="d-flex flex-column gap-4" enctype="multipart/form-data">
                             <div class="form-outline">
                                 <label for="username" class="form-label">Nombre de Usuario</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Usuario" required>
                             </div>
                             <div class="form-outline">
                                 <label for="email" class="form-label">Correo</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Correo" required>
                             </div>
                             <div class="form-outline">
                                 <label for="admin_image" class="form-label">Imagen de Adminitrador</label>
@@ -42,11 +42,11 @@ session_start();
                             </div>
                             <div class="form-outline">
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>
                             </div>
                             <div class="form-outline">
                                 <label for="conf_password" class="form-label">Confirmar Contraseña</label>
-                                <input type="password" name="conf_password" id="conf_password" class="form-control" placeholder="Confirm your Password" required>
+                                <input type="password" name="conf_password" id="conf_password" class="form-control" placeholder="Confirma tu Contraseña" required>
                             </div>
                             <div class="form-outline">
                                 <input type="submit" value="Register" class="btn btn-primary mb-3" name="admin_register">
@@ -81,16 +81,16 @@ if (isset($_POST['admin_register'])) {
     $select_result = mysqli_query($con, $select_query);
     $rows_count = mysqli_num_rows($select_result);
     if ($rows_count > 0) {
-        echo "<script>window.alert('Username | Email already exist');</script>";
+        echo "<script>window.alert('Usuario | Correo ya Existe');</script>";
     } else if ($password != $conf_password) {
-        echo "<script>window.alert('Passwords are not match');</script>";
+        echo "<script>window.alert('Contraseña No se Encuentra');</script>";
     } else {
         // insert query
         move_uploaded_file($image_tmp, "./admin_images/$image");
         $insert_query = "INSERT INTO `admin_table` (admin_name,admin_email,admin_image,admin_password) VALUES ('$username','$email','$image','$hash_password')";
         $insert_result = mysqli_query($con, $insert_query);
         if ($insert_result) {
-            echo "<script>window.alert('Admin added successfully');</script>";
+            echo "<script>window.alert('Administrador Agregado Con Exito');</script>";
         } else {
             die(mysqli_error($con));
         }

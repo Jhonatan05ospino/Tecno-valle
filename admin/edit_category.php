@@ -13,7 +13,7 @@
         $category_title = $_POST['category_title'];
         // check empty fields 
         if(empty($category_title)){
-            echo "<script>window.alert('Please fill the field');</script>";
+            echo "<script>window.alert('Por Favor llenar todos los campos');</script>";
         }else{
             // update query 
             $update_category_query = "UPDATE `categories` SET category_title='$category_title' WHERE category_id = $edit_id";

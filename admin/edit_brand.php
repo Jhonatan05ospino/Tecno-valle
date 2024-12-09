@@ -19,7 +19,7 @@
             $update_brand_query = "UPDATE `brands` SET brand_title='$brand_title' WHERE brand_id = $edit_id";
             $update_brand_result = mysqli_query($con,$update_brand_query);
             if($update_brand_result){
-                echo "<script>window.alert('Rama Acualizada con Exito');</script>";
+                echo "<script>window.alert('Marca Acualizada con Exito');</script>";
                 echo "<script>window.open('./index.php?view_brands','_self');</script>";
             }
         }
@@ -28,14 +28,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1 class="text-center mb-4">Editar Rama</h1>
+            <h1 class="text-center mb-4">Editar Marca</h1>
             <form action="" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-3 mb-3">
                 <div class="form-outline">
                     <label for="brand_title" class="form-label">Titulo de Producto</label>
                     <input type="text" name="brand_title" id="brand_title" class="form-control" required value="<?php echo $brand_title;?>">
                 </div>
                 <div class="form-outline text-center">
-                    <input type="submit" value="Acualizar Rama" class="btn btn-primary" name="update_brand">
+                    <input type="submit" value="Acualizar Marca" class="btn btn-primary" name="update_brand">
                 </div>
             </form>
         </div>

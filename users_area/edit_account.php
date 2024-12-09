@@ -29,7 +29,7 @@ if(isset($_POST['user_update'])){
     $update_result = mysqli_query($con,$update_query);
     if($update_result){
         $_SESSION['username'] = $update_user;
-        echo "<script>window.alert('Data updated successfully');</script>";
+        echo "<script>window.alert('Datos actualizados exitosamente');</script>";
         echo "<script>window.open('profile.php?edit_account','_self');</script>";
     }
 }

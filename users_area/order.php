@@ -28,9 +28,9 @@ while($row_price=mysqli_fetch_array($cart_result)){
         $product_price = array($row_product_price['product_price']);
         $product_values = array_sum($product_price) * $product_quantity;
         $total_price+=$product_values;
-        echo "Product Values" .  $product_values."<br/>";
-        echo "Total Price" .  $total_price."<br/>";
-        echo "Qauntity" .  $product_quantity."<br/>";
+        echo "Valor de los productos" .  $product_values."<br/>";
+        echo "Precio total" .  $total_price."<br/>";
+        echo "Cantidad de productos" .  $product_quantity."<br/>";
     }
     
     $insert_pending_order_query = "INSERT INTO `orders_pending` (user_id,invoice_number,product_id,quantity,order_status) VALUES ($user_id,$invoice_number,$product_id,$product_quantity,'$status')";
@@ -41,7 +41,7 @@ while($row_price=mysqli_fetch_array($cart_result)){
 $insert_order_query = "INSERT INTO `user_orders` (user_id,amount_due,invoice_number,total_products,order_date,order_status) VALUES ($user_id,$total_price,$invoice_number,$count_products,NOW(),'$status')";
 $insert_order_result = mysqli_query($con,$insert_order_query);
 if($insert_order_result){
-    echo "<script>window.alert('Orders are submitted successfully');</script>";
+    echo "<script>window.alert('Pedido enviado correctamente');</script>";
     echo "<script>window.open('profile.php','_self');</script>";
 }
 

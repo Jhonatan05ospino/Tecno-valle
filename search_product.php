@@ -23,7 +23,7 @@ session_start();
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Tecno Valle</a>
+            <a class="navbar-brand fw-bold" href="#">Teno Valle</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,9 +56,9 @@ session_start();
                         }
                     ?>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                <form class="d-flex" action="" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+                    <input type="submit" value="Search" class="btn btn-outline-primary" name="search_data_btn">
                 </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -122,36 +122,58 @@ session_start();
 
 
     
-    <div class="prod-details">
+    <div class="all-prod">
         <div class="container">
             <div class="sub-container pt-4 pb-4">
-
-                <?php
-                viewDetails();
-                ?>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <div class="products">
-        <div class="container">
-            <div class="categ-header">
-                <div class="sub-title">
-                    <span class="shape"></span>
-                    <span class="title">Productos Relacionados</span>
+                <div class="categ-header">
+                    <div class="sub-title">
+                        <span class="shape"></span>
+                        <span class="title">Categorias y Marcas</span>
+                    </div>
+                    <h2>Buscar por Categoria Y Marcas</h2>
                 </div>
-                <h2>Descubrir Nuevos Productos</h2>
-            </div>
-            <div class="row mb-3">
-                <?php
-                getProduct(3);
-                cart();
-                ?>
-            </div>
-            <div class="view d-flex justify-content-center align-items-center">
-                <button onclick="location.href='./products.php'">Ver mas Productos</button>
+                <div class="row mx-0">
+                    <div class="col-md-2 side-nav p-0">
+                        
+                        
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Marcas</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getBrands();
+                            ?>
+                        </ul>
+                        <div class="divider"></div>
+                        
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Categorias</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getCategories();
+                            ?>
+
+                        </ul>
+
+                    </div>
+                    <div class="col-md-10">
+                        
+                        <div class="row">
+                            <?php
+                            search_product();
+                            filterCategoryProduct();
+                            filterBrandProduct();
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -167,9 +189,11 @@ session_start();
 
 
 
+
+
     
     
-        
+        >
     
     
 
@@ -183,7 +207,6 @@ session_start();
     
 
     <script src="./assets//js/bootstrap.bundle.js"></script>
-    <script src="./assets//js/script.js"></script>
 </body>
 
 </html>

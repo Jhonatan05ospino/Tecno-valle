@@ -30,7 +30,7 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="./index.php">Inicio</a>
+                        <a class="nav-link" href="./index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./products.php">Productos</a>
@@ -122,40 +122,66 @@ session_start();
 
 
     
-    <div class="prod-details">
+    <div class="all-prod">
         <div class="container">
             <div class="sub-container pt-4 pb-4">
-
-                <?php
-                viewDetails();
-                ?>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <div class="products">
-        <div class="container">
-            <div class="categ-header">
-                <div class="sub-title">
-                    <span class="shape"></span>
-                    <span class="title">Productos Relacionados</span>
+                <div class="categ-header">
+                    <div class="sub-title">
+                        <span class="shape"></span>
+                        <span class="title">Categorias Y Marcas</span>
+                    </div>
+                    <h2>Buscar por Categoria Y Marcas</h2>
                 </div>
-                <h2>Descubrir Nuevos Productos</h2>
-            </div>
-            <div class="row mb-3">
-                <?php
-                getProduct(3);
-                cart();
-                ?>
-            </div>
-            <div class="view d-flex justify-content-center align-items-center">
-                <button onclick="location.href='./products.php'">Ver mas Productos</button>
+                <div class="row mx-0">
+                    <div class="col-md-2 side-nav p-0">
+                        
+                        
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Marcas</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getBrands();
+                            ?>
+                        </ul>
+                        <div class="divider"></div>
+                        
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item d-flex align-items-center gap-2">
+                                <span class="shape"></span>
+                                <a href="products.php" class="nav-link fw-bolder nav-title">
+                                    <h4>Categorias</h4>
+                                </a>
+                            </li>
+                            <?php
+                            getCategories();
+                            ?>
+
+                        </ul>
+
+                    </div>
+                    <div class="col-md-10">
+                        
+                        <div class="row">
+                            <?php
+                            getProduct();
+                            filterCategoryProduct();
+                            filterBrandProduct();
+                            $ip=getIPAddress();
+                            cart();
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
+
+
 
 
 
@@ -183,7 +209,6 @@ session_start();
     
 
     <script src="./assets//js/bootstrap.bundle.js"></script>
-    <script src="./assets//js/script.js"></script>
 </body>
 
 </html>

@@ -19,7 +19,7 @@ if(isset($_POST['confirm_payment'])){
     $insert_payment_query = "INSERT INTO `user_payments` (order_id,invoice_number,amount,payment_method) VALUES ($order_id,$invoice_number,$amount,'$payment_method')";
     $insert_payment_result = mysqli_query($con,$insert_payment_query);
     if($insert_payment_result){
-        echo "<script>window.alert('Payment completed successfully');</script>";
+        echo "<script>window.alert('Pago completado exitosamente');</script>";
         echo "<script>window.open('profile.php?my_orders','_self');</script>";
     }
     

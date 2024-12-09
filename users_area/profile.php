@@ -80,11 +80,11 @@ if(!isset($_SESSION['username'])){
                             <?php
                                 if(!isset($_SESSION['username'])){
                                     echo "<span>
-                                    Welcome guest
+                                    Bienvenido
                                 </span>";
                             }else{
                                     echo "<span>
-                                    Welcome ".$_SESSION['username']. "</span>";
+                                    Bienvenido ".$_SESSION['username']. "</span>";
                                 }
                                 ?>
                         </a>
@@ -93,13 +93,13 @@ if(!isset($_SESSION['username'])){
                     if(!isset($_SESSION['username'])){
                         echo "<li class='nav-item'>
                         <a class='nav-link' href='./users_area/user_login.php'>
-                            Login
+                            Iniciar sesion
                         </a>
                     </li>";
                 }else{
                         echo "<li class='nav-item'>
                         <a class='nav-link' href='./logout.php'>
-                            Logout
+                            Cerrar sesion
                         </a>
                     </li>";
                     }
